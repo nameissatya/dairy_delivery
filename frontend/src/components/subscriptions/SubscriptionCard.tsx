@@ -33,10 +33,10 @@ export default function SubscriptionCard({ sub, onToggle }: Props) {
 
   return (
     <div
-      className={`${cardSurface} group p-6 hover:scale-[1.01] active:scale-[0.99]`}
+      className={`${cardSurface} group p-4 transition sm:p-6 lg:hover:scale-[1.01] active:scale-[0.99]`}
     >
-      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-        <div>
+      <div className="mb-4 flex min-w-0 flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Plan
           </p>
@@ -50,7 +50,7 @@ export default function SubscriptionCard({ sub, onToggle }: Props) {
         type="button"
         onClick={handleToggle}
         disabled={busy}
-        className={`w-full ${isActive ? btnDanger : btnSuccess}`}
+        className={`min-h-11 w-full touch-manipulation ${isActive ? btnDanger : btnSuccess}`}
       >
         {busy ? (
           <>

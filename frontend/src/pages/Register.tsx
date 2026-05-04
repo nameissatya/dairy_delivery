@@ -28,7 +28,7 @@ export default function Register() {
     try {
       await api.post("/auth/register", form);
       showToast("success", "Account created. You can sign in now.");
-      navigate("/", { replace: true });
+      navigate("/login", { replace: true });
     } catch {
       showToast("error", "Registration failed. Check your details and try again.");
     } finally {
@@ -43,9 +43,12 @@ export default function Register() {
     <div className="flex min-h-screen flex-col bg-slate-50">
       <div className="flex flex-1 flex-col items-center justify-center px-4 py-12">
         <div className="mb-8 text-center">
-          <p className="text-2xl font-bold tracking-tight text-indigo-600">
+          <Link
+            to="/"
+            className="inline-block text-2xl font-bold tracking-tight text-indigo-600 transition hover:text-indigo-700"
+          >
             MilkRoute
-          </p>
+          </Link>
           <p className="mt-2 text-sm text-slate-500">
             Create your account to start deliveries.
           </p>
@@ -142,7 +145,7 @@ export default function Register() {
           <p className="mt-8 text-center text-sm text-slate-500">
             Already have an account?{" "}
             <Link
-              to="/"
+              to="/login"
               className="font-semibold text-indigo-600 hover:text-indigo-700"
             >
               Sign in

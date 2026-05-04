@@ -38,9 +38,12 @@ export default function Login() {
     <div className="flex min-h-screen flex-col bg-slate-50">
       <div className="flex flex-1 flex-col items-center justify-center px-4 py-12">
         <div className="mb-8 text-center">
-          <p className="text-2xl font-bold tracking-tight text-indigo-600">
+          <Link
+            to="/"
+            className="inline-block text-2xl font-bold tracking-tight text-indigo-600 transition hover:text-indigo-700"
+          >
             MilkRoute
-          </p>
+          </Link>
           <p className="mt-2 text-sm text-slate-500">
             Sign in to manage your milk deliveries.
           </p>

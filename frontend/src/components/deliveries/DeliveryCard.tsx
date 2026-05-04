@@ -8,7 +8,7 @@ import { cardSurface } from "../ui/surfaces";
 import StatusBadge from "../ui/StatusBadge";
 
 const btnAmber =
-  "mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-amber-500/20 transition duration-200 hover:bg-amber-600 hover:shadow-lg disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]";
+  "mt-2 inline-flex min-h-11 w-full touch-manipulation items-center justify-center gap-2 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-amber-500/20 transition duration-200 hover:bg-amber-600 hover:shadow-lg disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]";
 
 type Props = {
   del: Delivery;
@@ -40,14 +40,14 @@ export default function DeliveryCard({ del, onSkip, onRestore }: Props) {
 
   return (
     <div
-      className={`${cardSurface} group p-6 hover:scale-[1.01] active:scale-[0.99]`}
+      className={`${cardSurface} group p-4 transition sm:p-6 lg:hover:scale-[1.01] active:scale-[0.99]`}
     >
-      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-        <div>
+      <div className="mb-4 flex min-w-0 flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Delivery date
           </p>
-          <p className="text-lg font-semibold text-slate-900">
+          <p className="break-words text-base font-semibold text-slate-900 sm:text-lg">
             {new Date(del.date).toDateString()}
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function DeliveryCard({ del, onSkip, onRestore }: Props) {
           onClick={() =>
             void run(onRestore, "Delivery restored for this date.")
           }
-          className={`mt-2 w-full ${btnPrimary}`}
+          className={`mt-2 min-h-11 w-full touch-manipulation ${btnPrimary}`}
         >
           {busy ? (
             <>

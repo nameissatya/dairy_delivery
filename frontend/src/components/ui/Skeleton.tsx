@@ -41,22 +41,22 @@ export function SkeletonSectionTitle() {
 /** Full dashboard placeholder: stats + two sections with cards */
 export function DashboardSkeleton() {
   return (
-    <div className="space-y-10">
-      <div className="grid gap-4 sm:grid-cols-3">
+    <div className="min-w-0 space-y-8 sm:space-y-10">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
         <SkeletonStat />
         <SkeletonStat />
         <SkeletonStat />
       </div>
       <section className="space-y-4">
         <SkeletonSectionTitle />
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
           <SkeletonCard />
           <SkeletonCard />
         </div>
       </section>
       <section className="space-y-4">
         <SkeletonSectionTitle />
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
           <SkeletonCard />
           <SkeletonCard />
         </div>

@@ -33,8 +33,8 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-10">
-      <div className="grid gap-4 sm:grid-cols-3">
+    <div className="min-w-0 space-y-8 sm:space-y-10">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
         <StatCard
           label="Total subscriptions"
           value={totalSubs}
@@ -72,7 +72,7 @@ export default function Dashboard() {
             </Link>
           </EmptyState>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
             {subscriptions.map((sub) => (
               <SubscriptionCard
                 key={sub._id}
@@ -104,7 +104,7 @@ export default function Dashboard() {
             </Link>
           </EmptyState>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
             {deliveries.map((del) => (
               <DeliveryCard
                 key={del._id}
@@ -131,7 +131,7 @@ function StatCard({
 }) {
   return (
     <div
-      className={`${cardSurface} p-6 hover:scale-[1.02] hover:shadow-indigo-900/10`}
+      className={`${cardSurface} p-4 transition sm:p-6 lg:hover:scale-[1.02] lg:hover:shadow-indigo-900/10`}
     >
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
         {label}

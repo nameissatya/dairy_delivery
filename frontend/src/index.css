@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+    --font-script: "Pacifico", cursive;
+    --font-ui: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+
   body {
     @apply antialiased text-slate-900;
+    font-family: var(--font-ui);
   }
 }
 
